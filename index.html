@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Institucional: FAETEC Campos - Unidade Solda</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #f97316, #d97706);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Definição das cores para o gráfico e legenda */
+        :root {
+            --cor-eletrodo: #d97706; /* 22.9% */
+            --cor-mig-mag: #f97316;    /* 16.6% */
+            --cor-oxiacetilenico: #fb923c; /* 14.4% */
+            --cor-caldeireiro: #fdba74;  /* 11.0% */
+            --cor-tig: #fed7aa;         /* 10.9% */
+            --cor-outros: #9ca3af;       /* 24.2% */
+        }
+        .pie-chart {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            background-image: conic-gradient(
+                var(--cor-eletrodo) 0% 22.9%,
+                var(--cor-mig-mag) 22.9% 39.5%,
+                var(--cor-oxiacetilenico) 39.5% 53.9%,
+                var(--cor-caldeireiro) 53.9% 64.9%,
+                var(--cor-tig) 64.9% 75.8%,
+                var(--cor-outros) 75.8% 100%
+            );
+        }
+        .nav-link {
+            position: relative;
+            transition: color 0.3s;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #f97316;
+            transition: width 0.3s;
+        }
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 antialiased text-slate-800">
+
+    <!-- Cabeçalho e Navegação -->
+    <header id="header" class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm border-b border-slate-200">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-slate-800">FAETEC Campos Solda</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#destaques" class="nav-link text-slate-600 hover:text-orange-600 font-semibold">Destaques</a>
+                <a href="#pilares" class="nav-link text-slate-600 hover:text-orange-600 font-semibold">Pilares</a>
+                <a href="#formandos" class="nav-link text-slate-600 hover:text-orange-600 font-semibold">Formandos</a>
+                <a href="#perfil" class="nav-link text-slate-600 hover:text-orange-600 font-semibold">Perfil do Aluno</a>
+                <a href="#estrutura" class="nav-link text-slate-600 hover:text-orange-600 font-semibold">Estrutura</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-slate-800">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </nav>
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-200">
+            <a href="#destaques" class="block py-2 px-6 text-sm text-slate-600 hover:bg-slate-100">Destaques</a>
+            <a href="#pilares" class="block py-2 px-6 text-sm text-slate-600 hover:bg-slate-100">Pilares</a>
+            <a href="#formandos" class="block py-2 px-6 text-sm text-slate-600 hover:bg-slate-100">Formandos</a>
+            <a href="#perfil" class="block py-2 px-6 text-sm text-slate-600 hover:bg-slate-100">Perfil do Aluno</a>
+            <a href="#estrutura" class="block py-2 px-6 text-sm text-slate-600 hover:bg-slate-100">Estrutura</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-4 sm:p-6 lg:p-8 max-w-6xl space-y-12 md:space-y-16">
+        
+        <!-- Seção Hero -->
+        <section class="text-center my-8 md:my-12">
+            <h1 class="text-4xl md:text-6xl font-black text-slate-900 mb-3 leading-tight">FAETEC Campos<br>Unidade Solda</h1>
+            <p class="text-lg md:text-xl font-semibold gradient-text">Conectando educação e mercado de trabalho desde 2009</p>
+        </section>
+
+        <!-- Seção de Destaques -->
+        <section id="destaques" class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center scroll-mt-24">
+            <div class="bg-white p-6 rounded-2xl shadow-lg border border-slate-200 flex flex-col items-center justify-center transform hover:scale-105 transition-transform duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-600 mb-2"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path></svg>
+                <h3 class="font-bold text-lg text-slate-800">Inauguração</h3>
+                <p class="text-2xl font-bold text-amber-700">06/04/2009</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-lg border border-slate-200 flex flex-col items-center justify-center transform hover:scale-105 transition-transform duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-600 mb-2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                <h3 class="font-bold text-lg text-slate-800">Total de Alunos Formados</h3>
+                <p class="text-2xl font-bold text-amber-700">5.446</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-lg border border-slate-200 flex flex-col items-center justify-center transform hover:scale-105 transition-transform duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-600 mb-2"><path d="M22 21H3V3h12l4 4v14z"></path><path d="M15 3v4h4"></path></svg>
+                <h3 class="font-bold text-lg text-slate-800">Área Construída</h3>
+                <p class="text-2xl font-bold text-amber-700">1.150 m²</p>
+            </div>
+        </section>
+
+        <!-- Pilares Institucionais -->
+        <section id="pilares" class="bg-white p-8 rounded-2xl shadow-xl border border-slate-200 scroll-mt-24">
+            <h2 class="text-3xl font-bold text-center mb-8 text-slate-900">Pilares Institucionais</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="bg-amber-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 border-4 border-white shadow-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-600"><path d="M12 12a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"></path><path d="M12 12a5 5 0 1 1 0 10 5 5 0 0 1 0-10z"></path><path d="M12 12a5 5 0 1 1-10 0 5 5 0 0 1 10 0z"></path><path d="M12 12a5 5 0 1 1 10 0 5 5 0 0 1-10 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Missão</h3>
+                    <p class="text-slate-600 text-sm">Oferecer cursos para a inserção no mercado de trabalho e formar cidadãos produtivos e transformadores da sociedade.</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-amber-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 border-4 border-white shadow-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-600"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Visão</h3>
+                    <p class="text-slate-600 text-sm">Superar o modelo tradicional através do diálogo, com foco em atividades práticas e na construção coletiva do saber.</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-amber-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 border-4 border-white shadow-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-600"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12"cy="12" r="2"></circle></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Objetivos</h3>
+                    <p class="text-slate-600 text-sm">Promover qualificação profissional, capacitar para o mercado, formar profissionais eficientes e incentivar o empreendedorismo.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Gráfico de Formandos -->
+        <section id="formandos" class="bg-white p-8 rounded-2xl shadow-xl border border-slate-200 scroll-mt-24">
+            <h2 class="text-3xl font-bold text-center mb-8 text-slate-900">Distribuição de Alunos Formados por Curso (2009-2025)</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="flex justify-center items-center"><div class="pie-chart shadow-xl"></div></div>
+                <div>
+                    <div class="overflow-x-auto"><table class="w-full text-sm text-left text-slate-500">
+                        <thead class="text-xs text-slate-700 uppercase bg-slate-100 rounded-t-lg">
+                            <tr><th scope="col" class="px-4 py-3" colspan="2">Curso</th><th scope="col" class="px-4 py-3 text-right">Formados</th><th scope="col" class="px-4 py-3 text-right">% do Total</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr class="bg-white border-b"><td class="px-4 py-2 w-4"><span class="h-4 w-4 rounded-full inline-block" style="background-color: var(--cor-eletrodo);"></span></td><th scope="row" class="px-4 py-2 font-medium text-slate-900 whitespace-nowrap">Soldador Eletrodo Revestido</th><td class="px-4 py-2 text-right">1.247</td><td class="px-4 py-2 text-right font-semibold">22.9%</td></tr>
+                            <tr class="bg-white border-b"><td class="px-4 py-2"><span class="h-4 w-4 rounded-full inline-block" style="background-color: var(--cor-mig-mag);"></span></td><th scope="row" class="px-4 py-2 font-medium text-slate-900 whitespace-nowrap">Soldador MIG-MAG</th><td class="px-4 py-2 text-right">904</td><td class="px-4 py-2 text-right font-semibold">16.6%</td></tr>
+                             <tr class="bg-white border-b"><td class="px-4 py-2"><span class="h-4 w-4 rounded-full inline-block" style="background-color: var(--cor-oxiacetilenico);"></span></td><th scope="row" class="px-4 py-2 font-medium text-slate-900 whitespace-nowrap">Soldador Oxiacetilênico</th><td class="px-4 py-2 text-right">782</td><td class="px-4 py-2 text-right font-semibold">14.4%</td></tr>
+                             <tr class="bg-white border-b"><td class="px-4 py-2"><span class="h-4 w-4 rounded-full inline-block" style="background-color: var(--cor-caldeireiro);"></span></td><th scope="row" class="px-4 py-2 font-medium text-slate-900 whitespace-nowrap">Caldeireiro - Nível I</th><td class="px-4 py-2 text-right">598</td><td class="px-4 py-2 text-right font-semibold">11.0%</td></tr>
+                             <tr class="bg-white border-b"><td class="px-4 py-2"><span class="h-4 w-4 rounded-full inline-block" style="background-color: var(--cor-tig);"></span></td><th scope="row" class="px-4 py-2 font-medium text-slate-900 whitespace-nowrap">Soldador TIG</th><td class="px-4 py-2 text-right">594</td><td class="px-4 py-2 text-right font-semibold">10.9%</td></tr>
+                             <tr class="bg-white"><td class="px-4 py-2"><span class="h-4 w-4 rounded-full inline-block" style="background-color: var(--cor-outros);"></span></td><th scope="row" class="px-4 py-2 font-medium text-slate-900 whitespace-nowrap">Outros Cursos</th><td class="px-4 py-2 text-right">1.321</td><td class="px-4 py-2 text-right font-semibold">24.2%</td></tr>
+                        </tbody>
+                    </table></div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div id="perfil" class="space-y-8 scroll-mt-24">
+                <section class="bg-white p-8 rounded-2xl shadow-xl border border-slate-200">
+                    <h2 class="text-3xl font-bold text-center mb-6 text-slate-900">Perfil do Aluno</h2>
+                    <ul class="space-y-4">
+                        <li class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-600 mr-3 mt-1 flex-shrink-0"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L8.6 3.3a2 2 0 0 0-1.7-.9H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h16z"></path><circle cx="12" cy="13" r="2"></circle><path d="M12 15v3"></path></svg><div><h4 class="font-semibold">Situação:</h4> <p class="text-slate-600 text-sm">Mais da metade está desempregada (entre 6 meses e 2 anos).</p></div></li>
+                        <li class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-600 mr-3 mt-1 flex-shrink-0"><circle cx="12" cy="12" r="8"></circle><line x1="12" y1="16" y2="12"></line><line x1="12" y1="8" y2="8.01"></line></svg><div><h4 class="font-semibold">Renda:</h4> <p class="text-slate-600 text-sm">Renda mensal de até R$ 1.000,00, complementada por trabalhos informais.</p></div></li>
+                         <li class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-600 mr-3 mt-1 flex-shrink-0"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg><div><h4 class="font-semibold">Motivação:</h4> <p class="text-slate-600 text-sm">Principal motivo da escolha é a busca por um ensino de qualidade.</p></div></li>
+                    </ul>
+                </section>
+                <section class="bg-white p-8 rounded-2xl shadow-xl border border-slate-200">
+                    <h2 class="text-3xl font-bold text-center mb-6 text-slate-900">Metodologia e Acessibilidade</h2>
+                    <ul class="space-y-4">
+                        <li class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-600 mr-3 mt-1 flex-shrink-0"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><path d="m10 10.5 2 2 2-2"></path><path d="m12 12.5-2-2-2 2"></path></svg><div><h4 class="font-semibold">Foco no Aluno:</h4> <p class="text-slate-600 text-sm">O aluno é o protagonista, com conteúdos que constroem competências e valores.</p></div></li>
+                         <li class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-600 mr-3 mt-1 flex-shrink-0"><path d="M10.4 2.2a2.3 2.3 0 0 1 3.2 0l7.2 7.2a2.3 2.3 0 0 1 0 3.2L13.6 20a2.3 2.3 0 0 1-3.2 0L3.2 12.8a2.3 2.3 0 0 1 0-3.2l7.2-7.2Z"></path><path d="m15.5 6.5-5 5"></path><path d="m17 12-5 5"></path><path d="m12 17-5 5"></path><path d="m7 12-5 5"></path></svg><div><h4 class="font-semibold">Aprendizagem Significativa:</h4> <p class="text-slate-600 text-sm">Aulas dinâmicas com suportes tecnológicos e atividades práticas.</p></div></li>
+                        <li class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-600 mr-3 mt-1 flex-shrink-0"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 0 2l-.15.08a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.38a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1 0-2l.15-.08a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path><circle cx="12" cy="12" r="3"></circle></svg><div><h4 class="font-semibold">Compromisso com a Inclusão:</h4> <p class="text-slate-600 text-sm">Eliminação de barreiras e adaptação de espaços e recursos para garantir acessibilidade universal.</p></div></li>
+                    </ul>
+                </section>
+            </div>
+            <section id="estrutura" class="bg-white p-8 rounded-2xl shadow-xl border border-slate-200 scroll-mt-24">
+                <h2 class="text-3xl font-bold text-center mb-6 text-slate-900">Estrutura e Recursos</h2>
+                <div class="space-y-4">
+                    <div class="bg-slate-100 p-4 rounded-lg flex items-center hover:bg-slate-200 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-600 mr-4 flex-shrink-0"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"></rect><line x1="3" x2="21" y1="9" y2="9"></line><line x1="9" x2="9" y1="21" y2="9"></line></svg><div><h4 class="font-semibold">Salas de Aula</h4><p class="text-slate-600 text-sm">3 salas equipadas com notebook e projetor.</p></div></div>
+                    <div class="bg-slate-100 p-4 rounded-lg flex items-center hover:bg-slate-200 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-600 mr-4 flex-shrink-0"><path d="M17 14V6.2a2 2 0 0 0-2-2.2H8.8a2 2 0 0 0-2.2 2V12"></path><path d="M7 12v2a4.8 4.8 0 0 0 4.8 4.8H15"></path><path d="M12 11.2a2.8 2.8 0 0 1 2.8 2.8V17"></path><path d="m14 17 3-3-3-3"></path></svg><div><h4 class="font-semibold">Laboratórios de Soldagem</h4><p class="text-slate-600 text-sm">Setores distintos para Eletrodo Revestido, TIG, MIG/MAG, Arame Tubular, Arco Submerso e Oxiacetilênico.</p></div></div>
+                    <div class="bg-slate-100 p-4 rounded-lg flex items-center hover:bg-slate-200 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-600 mr-4 flex-shrink-0"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line></svg><div><h4 class="font-semibold">Laboratórios de Inspeção</h4><p class="text-slate-600 text-sm">Laboratórios para inspeção de solda e ensaios não destrutivos.</p></div></div>
+                    <div class="bg-slate-100 p-4 rounded-lg flex items-center hover:bg-slate-200 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-600 mr-4 flex-shrink-0"><path d="M14 9.5 22 2l-3 11-1 3-3-1-3 5-5-3-1-4-4 2Z"></path><path d="M12 15h.01"></path></svg><div><h4 class="font-semibold">Outras Oficinas</h4><p class="text-slate-600 text-sm">Setores para Caldeiraria, Encanador Industrial e Pintor Industrial.</p></div></div>
+                    <div class="bg-slate-100 p-4 rounded-lg flex items-center hover:bg-slate-200 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-600 mr-4 flex-shrink-0"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg><div><h4 class="font-semibold">Espaços de Apoio</h4><p class="text-slate-600 text-sm">Sala de estudos com acervo técnico, sala multimídia para até 30 pessoas e sala de professores.</p></div></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-slate-800 text-white mt-12">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p class="text-lg font-semibold">FAETEC Campos - Unidade Solda</p>
+            <p class="text-sm text-slate-400 mt-2">Conectando educação e mercado de trabalho desde 2009.</p>
+            <div class="mt-4 text-xs text-slate-400">
+                <p>Av. Alberto Lamego, 712 - Parque Califórnia, Campos dos Goytacazes - RJ</p>
+                <p>Tel: (22) 2731-5789 | soldacampos.direção@faetec.rj.gov.br</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Lógica para o menu mobile
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Lógica para fechar o menu mobile ao clicar em um link
+        const mobileLinks = mobileMenu.getElementsByTagName('a');
+        for (let link of mobileLinks) {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        }
+
+        // Lógica para destacar o link ativo na navegação
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 120) { // 120 é um offset para o header fixo
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
